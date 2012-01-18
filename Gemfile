@@ -12,6 +12,8 @@ gem 'rest-client'
 gem 'nokogiri'
 
 # Component requirements
+gem 'mongoid'
+gem 'bson_ext', :require => "mongo"
 gem 'haml'
 
 # Test requirements
