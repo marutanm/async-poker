@@ -8,6 +8,8 @@ source :rubygems
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'pry-padrino'
+gem 'rest-client'
+gem 'nokogiri'
 
 # Component requirements
 gem 'haml'
