@@ -6,9 +6,13 @@ AsyncPoker.helpers do
     noko = Nokogiri::XML(RestClient.get "http://www.pivotaltracker.com/services/v3/projects/#{ENV['PROJECT_ID']}/stories", {'X-TrackerToken' => ENV['TOKEN'] })
 
     noko.xpath("//story").each do |n|
-      Story.create(id: n.xpath("id").text, name: n.xpath("name").text)
+      if n.xpath("estimate").text == '-1'
+        Story.create(story_id: n.xpath("id").text,
+                     name: n.xpath("name").text,
+                     estiname: n.xpath("estimate").text
+                    )
+      end
     end
-
   end
 
 end
