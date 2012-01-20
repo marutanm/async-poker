@@ -5,9 +5,6 @@ GEM
       activesupport (= 3.1.3)
       builder (~> 3.0.0)
       i18n (~> 0.6)
-    activeresource (3.1.3)
-      activemodel (= 3.1.3)
-      activesupport (= 3.1.3)
     activesupport (3.1.3)
       multi_json (~> 1.0)
     bson (1.5.2)
@@ -20,10 +17,13 @@ GEM
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
     haml (3.1.4)
+    happymapper (0.4.0)
+      libxml-ruby (~> 2.0)
     http_router (0.10.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     i18n (0.6.0)
+    libxml-ruby (2.2.2)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -38,6 +38,7 @@ GEM
       mongo (~> 1.3)
       tzinfo (~> 0.3.22)
     multi_json (1.0.4)
+    nokogiri (1.5.0)
     padrino (0.10.5)
       padrino-admin (= 0.10.5)
       padrino-cache (= 0.10.5)
@@ -66,6 +67,15 @@ GEM
     padrino-mailer (0.10.5)
       mail (~> 2.3.0)
       padrino-core (= 0.10.5)
+    pivotal-tracker (0.4.1)
+      builder
+      builder
+      happymapper (>= 0.3.2)
+      happymapper (>= 0.3.2)
+      nokogiri (>= 1.4.3)
+      nokogiri (~> 1.4)
+      rest-client (~> 1.6.0)
+      rest-client (~> 1.6.0)
     polyglot (0.3.3)
     pry (0.9.7.4)
       coderay (~> 0.9.8)
@@ -103,12 +113,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeresource
   bson_ext
   haml
   mongoid
   padrino (= 0.10.5)
+  pivotal-tracker
   pry-padrino
   rake
-  rest-client
   sinatra-flash

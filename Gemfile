@@ -8,8 +8,7 @@ source :rubygems
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'pry-padrino'
-gem 'rest-client'
-gem 'activeresource'
+gem 'pivotal-tracker'
 
 # Component requirements
 gem 'mongoid'
