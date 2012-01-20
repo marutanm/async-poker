@@ -2,17 +2,15 @@
 
 AsyncPoker.helpers do
 
-  def get_and_save_stories
-    noko = Nokogiri::XML(RestClient.get "http://www.pivotaltracker.com/services/v3/projects/#{ENV['PROJECT_ID']}/stories", {'X-TrackerToken' => ENV['TOKEN'] })
-
-    noko.xpath("//story").each do |n|
-      if n.xpath("estimate").text == '-1'
-        Story.create(story_id: n.xpath("id").text,
-                     name: n.xpath("name").text,
-                     estiname: n.xpath("estimate").text
-                    )
-      end
+  def get_and_save_feature
+    project = PivotalTracker::Project.find(ENV['PROJECT_ID'])
+    project.stories.all(:story_type => 'feature').each do |story|
+      logger.info story.name
+      Story.create(story_id: story.id,
+                   name: story.name,
+                   description: story.description,
+                   estiname: story.estimate
+                  )
     end
   end
-
 end

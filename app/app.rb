@@ -5,6 +5,8 @@ class AsyncPoker < Padrino::Application
 
   enable :sessions
 
+  PivotalTracker::Client.token = ENV['TOKEN']
+
   ##
   # Caching support
   #

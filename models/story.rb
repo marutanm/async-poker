@@ -4,7 +4,7 @@ class Story
   field :story_id
   field :name
   field :description
-  field :state, type: Boolean
+  field :state, type: Boolean, default: false
 
   embeds_many :votes
 

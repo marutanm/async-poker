@@ -4,7 +4,8 @@ AsyncPoker.controllers  do
   end
 
   get :update do
-    Pivotal.find(:all, :params => {:project_id => ENV['PROJECT_ID'], :filter => 'story_type:feature'}).to_s
+    get_and_save_feature
+    200
   end
 
 end
