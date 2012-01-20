@@ -4,6 +4,7 @@ class Story
   field :story_id
   field :name
   field :description
+  field :estimate
   field :state, type: Boolean, default: false
 
   embeds_many :votes
