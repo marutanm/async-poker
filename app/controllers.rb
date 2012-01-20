@@ -1,6 +1,8 @@
 AsyncPoker.controllers  do
 
   get :index do
+    @stories = Story.all.each
+    haml :index
   end
 
   get :update do
