@@ -11,6 +11,7 @@ gem 'pry-padrino'
 gem 'pivotal-tracker'
 
 # Component requirements
+gem 'omniauth'
 gem 'mongoid'
 gem 'bson_ext', :require => "mongo"
 gem 'haml'

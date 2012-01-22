@@ -1,4 +1,5 @@
 class AsyncPoker < Padrino::Application
+  register OmniauthInitializer
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
@@ -7,6 +8,9 @@ class AsyncPoker < Padrino::Application
 
   PivotalTracker::Client.token = ENV['TOKEN']
 
+  use OmniAuth::Builder do
+    provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+  end
   ##
   # Caching support
   #
