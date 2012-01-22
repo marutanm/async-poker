@@ -11,6 +11,11 @@ AsyncPoker.controllers  do
     end
   end
 
+  get :logout do
+    session[:uid] = nil
+    redirect url(:index)
+  end
+
   get :index do
     redirect url('/auth/github') unless current_user
     @stories = Story.all.each
