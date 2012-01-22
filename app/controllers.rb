@@ -7,7 +7,7 @@ AsyncPoker.controllers  do
 
   get :update do
     get_and_save_feature
-    200
+    redirect url(:index)
   end
 
 end
