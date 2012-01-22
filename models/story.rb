@@ -7,6 +7,6 @@ class Story
   field :estimate
   field :state, type: Boolean, default: false
 
-  embeds_many :votes
+  has_many :votes
 
 end
