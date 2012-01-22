@@ -4,6 +4,7 @@ class Vote
 
   field :value
 
+  embedded_in :story
   belongs_to :user
 
 end
