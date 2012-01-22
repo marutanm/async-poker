@@ -10,6 +10,7 @@ gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'pry-padrino'
 gem 'pivotal-tracker'
 gem 'omniauth-github'
+gem "rack", git: "https://github.com/rack/rack.git", ref: "e20baec005238f9876281c0d083fe5a4e01aa034" 
 
 # Component requirements
 gem 'omniauth'

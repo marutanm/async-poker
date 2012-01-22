@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/rack/rack.git
+  revision: e20baec005238f9876281c0d083fe5a4e01aa034
+  ref: e20baec005238f9876281c0d083fe5a4e01aa034
+  specs:
+    rack (1.4.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -103,7 +110,6 @@ GEM
       slop (~> 2.1.0)
     pry-padrino (0.1.2)
       pry (>= 0.8)
-    rack (1.4.0)
     rack-protection (1.2.0)
       rack
     rake (0.9.2.2)
@@ -140,5 +146,6 @@ DEPENDENCIES
   padrino (= 0.10.5)
   pivotal-tracker
   pry-padrino
+  rack!
   rake
   sinatra-flash
