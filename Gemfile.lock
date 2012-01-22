@@ -7,12 +7,17 @@ GEM
       i18n (~> 0.6)
     activesupport (3.1.3)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     bson (1.5.2)
     bson_ext (1.5.2)
       bson (= 1.5.2)
     builder (3.0.0)
     coderay (0.9.8)
     diff-lcs (1.1.3)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
     grit (2.4.1)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
@@ -39,10 +44,20 @@ GEM
       mongo (~> 1.3)
       tzinfo (~> 0.3.22)
     multi_json (1.0.4)
+    multipart-post (1.1.4)
     nokogiri (1.5.0)
+    oauth2 (0.5.2)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
     omniauth (1.0.2)
       hashie (~> 1.2)
       rack
+    omniauth-github (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-oauth2 (1.0.0)
+      oauth2 (~> 0.5.0)
+      omniauth (~> 1.0)
     padrino (0.10.5)
       padrino-admin (= 0.10.5)
       padrino-cache (= 0.10.5)
@@ -121,6 +136,7 @@ DEPENDENCIES
   haml
   mongoid
   omniauth
+  omniauth-github
   padrino (= 0.10.5)
   pivotal-tracker
   pry-padrino

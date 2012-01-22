@@ -9,6 +9,7 @@ gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'pry-padrino'
 gem 'pivotal-tracker'
+gem 'omniauth-github'
 
 # Component requirements
 gem 'omniauth'
