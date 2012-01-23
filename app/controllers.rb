@@ -2,7 +2,9 @@ AsyncPoker.controllers  do
 
   get '/auth/github/callback' do
     auth = request.env["omniauth.auth"]
-    account = Account.find_or_create_by_ominiauth(auth)
+    logger.info auth
+    account = Account.find_or_create_with_ominiauth(auth)
+    logger.info account
     set_current_account(account)
     redirect url(:index)
   end
@@ -13,6 +15,7 @@ AsyncPoker.controllers  do
   end
 
   get :index do
+    logger.info current_account
     @stories = Story.all.each
     haml :index
   end
