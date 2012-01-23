@@ -29,6 +29,8 @@ class AsyncPoker < Padrino::Application
   end
 
   access_control.roles_for :admin do |role|
+    role.allow "/"
+    role.allow "/update"
     role.allow "/admin"
   end
 

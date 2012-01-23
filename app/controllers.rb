@@ -6,7 +6,7 @@ AsyncPoker.controllers  do
     account = Account.find_or_create_with_ominiauth(auth)
     logger.info account
     set_current_account(account)
-    if member?
+    if member? || admin?
       redirect url(:index)
     else
       redirect url(:welcome)

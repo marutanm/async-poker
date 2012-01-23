@@ -18,4 +18,8 @@ AsyncPoker.helpers do
     current_account && current_account.role == 'member'
   end
 
+  def admin?
+    current_account && current_account.role == 'admin'
+  end
+
 end
