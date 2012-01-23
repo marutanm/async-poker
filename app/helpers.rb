@@ -14,16 +14,4 @@ AsyncPoker.helpers do
     end
   end
 
-  def authorized?(auth)
-    ENV['AUTHORIZE'].split(',').include? auth['info']['nickname']
-  end
-
-  def set_current_user(user)
-    session[:uid] = user.uid
-  end
-
-  def current_user
-    User.find_by_uid(session[:uid])
-  end
-
 end
