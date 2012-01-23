@@ -6,7 +6,11 @@ AsyncPoker.controllers  do
     account = Account.find_or_create_with_ominiauth(auth)
     logger.info account
     set_current_account(account)
-    redirect url(:index)
+    redirect url(:welcome)
+  end
+
+  get :welcome do
+    "Welcome #{current_account.surname}"
   end
 
   get :logout do

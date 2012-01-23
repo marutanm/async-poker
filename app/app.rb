@@ -17,9 +17,10 @@ class AsyncPoker < Padrino::Application
   set :login_page, "/auth/github"
 
   access_control.roles_for :any do |role|
-    role.allow "/auth/github/"
-    role.allow "/auth/github/callback"
-    # role.protect "/"
+    role.allow "/auth/github/*"
+    role.allow "/welcome"
+    role.allow "/logout"
+    role.protect "/*"
   end
 
   access_control.roles_for :member do |role|
