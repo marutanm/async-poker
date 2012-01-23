@@ -14,4 +14,8 @@ AsyncPoker.helpers do
     end
   end
 
+  def member?
+    current_account && current_account.role == 'member'
+  end
+
 end
