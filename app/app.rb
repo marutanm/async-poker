@@ -11,6 +11,24 @@ class AsyncPoker < Padrino::Application
   use OmniAuth::Builder do
     provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
   end
+
+  register Padrino::Admin::AccessControl
+
+  set :login_page, "/auth/github"
+
+  access_control.roles_for :any do |role|
+    role.protect "/*"
+    role.allow "/auth/github/*"
+  end
+
+  access_control.roles_for :member do |role|
+    role.allow "/"
+    role.allow "/update"
+  end
+
+  access_control.roles_for :admin do |role|
+    role.allow "/admin"
+  end
   ##
   # Caching support
   #

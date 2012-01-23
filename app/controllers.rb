@@ -2,22 +2,17 @@ AsyncPoker.controllers  do
 
   get '/auth/github/callback' do
     auth = request.env["omniauth.auth"]
-    if authorized?(auth)
-      user = User.find_or_create_by_ominiauth(auth)
-      set_current_user(user)
-      redirect url(:index)
-    else
-      halt 401
-    end
+    account = Account.find_or_create_by_ominiauth(auth)
+    set_current_account(account)
+    redirect url(:index)
   end
 
   get :logout do
-    session[:uid] = nil
+    set_current_account(nil)
     redirect url(:index)
   end
 
   get :index do
-    redirect url('/auth/github') unless current_user
     @stories = Story.all.each
     haml :index
   end
