@@ -27,6 +27,13 @@ AsyncPoker.controllers  do
     haml :index
   end
 
+  post :index do
+    Vote.update_value_with(story_id: params[:story_id],
+                           account_id: current_account.id,
+                           value: params[:value])
+    redirect url(:index)
+  end
+
   get :update do
     get_and_save_feature
     redirect url(:index)
