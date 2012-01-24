@@ -24,7 +24,9 @@ AsyncPoker.controllers  do
 
   get :index do
     logger.info current_account
-    @stories = Story.all.each
+    @to_vote = Story.to_vote
+    @voted = Story.voted
+    @estimated = Story.estimated
     haml :index
   end
 

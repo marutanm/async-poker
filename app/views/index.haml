@@ -1,4 +1,20 @@
-- @stories.each do |s|
+%h1
+  Not Yet
+- @to_vote.each do |s|
+  %div
+    %p= s.name
+    %p= s.description
+
+%h1
+  Voted
+- @voted.each do |s|
+  %div
+    %p= s.name
+    %p= s.description
+
+%h1
+  Estimated
+- @estimated.each do |s|
   %div
     %p= s.name
     %p= s.description
