@@ -1,4 +1,5 @@
 class AsyncPoker < Padrino::Application
+  register ScssInitializer
   register OmniauthInitializer
   register Padrino::Rendering
   register Padrino::Mailer

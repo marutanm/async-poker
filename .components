@@ -4,5 +4,5 @@
 :mock: none
 :script: none
 :renderer: haml
-:stylesheet: none
+:stylesheet: scss
 :admin_renderer: haml
