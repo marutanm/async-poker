@@ -9,13 +9,6 @@ class Account
   field :role,             :type => String, :default => 'none'
   field :uid,              :type => String
 
-  has_many :votes
-
-  def self.authenticate(email, password)
-    account = first(:conditions => { :email => email }) if email.present?
-    account && account.has_password?(password) ? account : nil
-  end
-
   ##
   # This method is used by AuthenticationHelper
   #
