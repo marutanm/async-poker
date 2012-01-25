@@ -8,6 +8,8 @@ class Story
   field :estimate, type: Integer
   field :state, type: Boolean, default: false
 
+  embeds_many :votes
+
   def self.to_vote
     where(estimate: -1, state: false)
   end

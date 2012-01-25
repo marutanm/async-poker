@@ -9,10 +9,4 @@ class Vote
 
   validates_presence_of :account_id
 
-  def self.update_value_with(params)
-    find_or_create_by(story_id: params[:story_id], account_id: params[:account_id]) do |v|
-      v.value = params[:value]
-    end
-  end
-
 end
