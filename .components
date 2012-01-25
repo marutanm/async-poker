@@ -2,7 +2,7 @@
 :orm: mongoid
 :test: none
 :mock: none
-:script: none
+:script: jquery
 :renderer: haml
 :stylesheet: scss
 :admin_renderer: haml
