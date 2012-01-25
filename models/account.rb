@@ -9,8 +9,6 @@ class Account
   field :role,             :type => String, :default => 'none'
   field :uid,              :type => String
 
-  has_many :votes
-
   ##
   # This method is used by AuthenticationHelper
   #
