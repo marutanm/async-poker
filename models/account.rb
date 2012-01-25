@@ -3,11 +3,17 @@ class Account
   attr_accessor :password, :password_confirmation
 
   # Fields
+  field :name,             :type => String
   field :surname,          :type => String
   field :email,            :type => String
   field :crypted_password, :type => String
   field :role,             :type => String, :default => 'none'
   field :uid,              :type => String
+
+  def self.authenticate(email, password)
+    account = first(:conditions => { :email => email }) if email.present?
+    account && account.has_password?(password) ? account : nil
+  end
 
   ##
   # This method is used by AuthenticationHelper
