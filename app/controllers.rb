@@ -28,10 +28,10 @@ AsyncPoker.controllers  do
   end
 
   post :index do
-    story = Story.find(params[:story_id]).first
-    story.votes.find_or_create_with_ominiauth(account_id: current_account.id) do |s|
-      s.value = params[:value]
-    end
+    story = Story.find(params[:story_id])
+    v = story.votes.find_or_create_by(account_id: current_account.id)
+    v.value = params[:value]
+    v.save
     redirect url(:index)
   end
 
