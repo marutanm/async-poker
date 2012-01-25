@@ -11,11 +11,20 @@ class Account
 
   has_many :votes
 
+  def self.authenticate(email, password)
+    account = first(:conditions => { :email => email }) if email.present?
+    account && account.has_password?(password) ? account : nil
+  end
+
   ##
   # This method is used by AuthenticationHelper
   #
   def self.find_by_id(id)
     find(id) rescue nil
+  end
+
+  def has_password?(password)
+    ::BCrypt::Password.new(crypted_password) == password
   end
 
   def self.find_or_create_with_ominiauth(auth)
@@ -24,5 +33,9 @@ class Account
       a.email = auth['info']['email']
     end
   end
-  
+
+  def encrypt_password
+    self.crypted_password = ::BCrypt::Password.create(self.password)
+  end
+
 end
