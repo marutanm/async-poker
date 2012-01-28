@@ -6,6 +6,9 @@ class AsyncPoker < Padrino::Application
   register Padrino::Helpers
 
   enable :sessions
+  configure :development do
+    register BaristaInitializer
+  end
 
   PivotalTracker::Client.token = ENV['TOKEN']
 
