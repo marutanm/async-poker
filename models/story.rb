@@ -22,4 +22,8 @@ class Story
     where("this.estimate != -1")
   end
 
+  def selected?(account, value)
+    votes.where(:account_id => account.id.to_s).first.value == value rescue nil
+  end
+
 end

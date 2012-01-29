@@ -12,7 +12,7 @@
       .title= s.name
       .description= s.description
     - fibonacci.each do |v|
-      .card.span1
+      .card.span1{:class => s.selected?(current_account, v) && 'selected' }
         .value= v
 
 %h1
