@@ -1,3 +1,21 @@
-body {
-  background-color: #99cc00;
+@mixin border-radius($rad) {
+  border-radius: $rad;
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+}
+
+.story {
+  .title {
+    font-weight: bold;
+    font-size: large;
+  }
+  .description {
+  }
+  .card {
+    @include border-radius(5px);
+    border: groove;
+    height: 70px;
+    text-align: center;
+    font-size: 50px;
+  }
 }

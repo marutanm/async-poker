@@ -1,12 +1,26 @@
+= stylesheet_link_tag 'bootstrap.min'
 = stylesheet_link_tag 'style'
 = javascript_include_tag 'application'
 
 %h1
   Not Yet
 - @to_vote.each do |s|
-  %div
-    %p= s.name
-    %p= s.description
+  .story.row
+    .span10
+      .title= s.name
+      .description= s.description
+    .card.span1
+      0
+    .card.span1
+      1
+    .card.span1
+      2
+    .card.span1
+      3
+    .card.span1
+      5
+    .card.span1
+      8
 
 %h1
   Voted
