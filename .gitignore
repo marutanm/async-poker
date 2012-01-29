@@ -6,3 +6,5 @@ vendor/
 !vendor/gems/cache/
 .sass-cache/*
 .powenv
+public/javascripts
+public/stylesheets
