@@ -1,3 +1,5 @@
+- fibonacci = [0, 1, 2, 3, 5, 8]
+
 = stylesheet_link_tag 'bootstrap.min'
 = stylesheet_link_tag 'style'
 = javascript_include_tag 'application'
@@ -9,18 +11,9 @@
     .span10
       .title= s.name
       .description= s.description
-    .card.span1
-      .value 0
-    .card.span1
-      .value 1
-    .card.span1
-      .value 2
-    .card.span1
-      .value 3
-    .card.span1
-      .value 5
-    .card.span1
-      .value 8
+    - fibonacci.each do |v|
+      .card.span1
+        .value= v
 
 %h1
   Voted
