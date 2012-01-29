@@ -29,10 +29,10 @@ AsyncPoker.controllers  do
 
   post :index do
     story = Story.find(params[:story_id])
-    v = story.votes.find_or_create_by(account_id: current_account.id)
+    v = story.votes.find_or_create_by(account_id: current_account.id.to_s)
     v.value = params[:value]
     v.save
-    redirect url(:index)
+    200
   end
 
   get :update do

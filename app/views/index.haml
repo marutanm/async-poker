@@ -2,12 +2,12 @@
 
 = stylesheet_link_tag 'bootstrap.min'
 = stylesheet_link_tag 'style'
-= javascript_include_tag 'application'
+= javascript_include_tag 'jquery', 'application'
 
 %h1
   Not Yet
 - @to_vote.each do |s|
-  .story.row
+  .story.row{ :id => s.id }
     .span10
       .title= s.name
       .description= s.description
