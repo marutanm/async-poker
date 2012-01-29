@@ -17,5 +17,10 @@
     height: 70px;
     text-align: center;
     font-size: 50px;
+    .value {
+      position:relative;
+      top:50%;
+      margin-top: -20px;
+    }
   }
 }
