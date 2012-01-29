@@ -30,6 +30,9 @@
 %h1
   Estimated
 - @estimated.each do |s|
-  %div
-    %p= s.name
-    %p= s.description
+  .story.row
+    .span10
+      .title= s.name
+      .description= s.description
+    .card.span1
+      .value= s.estimate
