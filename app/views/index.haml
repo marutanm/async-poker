@@ -6,21 +6,26 @@
 %title AsyncPoker
 %h1
   Not Yet
-- @to_vote.each do |s|
-  .story.row{ :id => s.id }
-    .span10
-      .title= s.name
-      .description= s.description
-    - fibonacci.each do |v|
-      .card.span1{:class => s.selected?(current_account, v) && 'selected' }
-        .value= v
+#to_vote
+  - @to_vote.each do |s|
+    .story.row{ :id => s.id }
+      .span10
+        .title= s.name
+        .description= s.description
+      - fibonacci.each do |v|
+        .card.span1{:class => s.selected?(current_account, v) && 'selected' }
+          .value= v
 
 %h1
   Voted
 - @voted.each do |s|
-  %div
-    %p= s.name
-    %p= s.description
+  .story.row
+    .span10
+      .title= s.name
+      .description= s.description
+    - s.votes.each do |v|
+      .card.span1
+        .value= v.value
 
 %h1
   Estimated
