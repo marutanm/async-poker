@@ -32,6 +32,7 @@ AsyncPoker.controllers  do
     v = story.votes.find_or_create_by(account_id: current_account.id.to_s)
     v.value = params[:value]
     v.save
+    check_voted(story.id)
     200
   end
 

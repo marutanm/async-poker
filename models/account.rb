@@ -33,6 +33,10 @@ class Account
     end
   end
 
+  def self.voter
+    where(role: 'member') + where(role: 'admin')
+  end
+
   def encrypt_password
     self.crypted_password = ::BCrypt::Password.create(self.password)
   end

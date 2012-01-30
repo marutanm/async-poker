@@ -22,4 +22,10 @@ AsyncPoker.helpers do
     current_account && current_account.role == 'admin'
   end
 
+  def check_voted(story_id)
+    story = Story.find(story_id)
+    story.state = true if story.votes.count >= Account.voter.count
+    story.save
+  end
+
 end
