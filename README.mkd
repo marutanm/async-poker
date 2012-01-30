@@ -1,0 +1,5 @@
+## ENV
+- TOKEN: to fetch stories from pivotal tracker
+- PROJECT_ID: to determine project on pivotal tracker
+- GITHUB_KEY: to oauth github
+- GITHUB_SECRET: to oauth github
