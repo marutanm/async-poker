@@ -28,4 +28,8 @@ AsyncPoker.helpers do
     story.save
   end
 
+  def short_name(account_id)
+    Account.find(account_id).surname[0..3]
+  end
+
 end
