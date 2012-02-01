@@ -26,6 +26,7 @@
     - s.votes.each do |v|
       .card.span1
         .value= v.value
+        %span.label.name= Account.find(v.account_id).surname[0..3]
 
 %h1
   Estimated
