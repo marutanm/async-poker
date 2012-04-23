@@ -1,15 +1,11 @@
 - fibonacci = [0, 1, 2, 3, 5, 8]
 
-= stylesheet_link_tag 'bootstrap.min', 'style'
-= javascript_include_tag 'jquery', 'application'
-
-%title AsyncPoker
 %h1
   Not Yet
 #to_vote
   - @to_vote.each do |s|
     .story.row{ :id => s.id }
-      .span10
+      .span9
         .title= s.name
         .description= s.description
       - fibonacci.each do |v|
