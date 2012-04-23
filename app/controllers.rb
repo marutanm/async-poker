@@ -36,6 +36,11 @@ AsyncPoker.controllers  do
     200
   end
 
+  get :story, :with => :story_id do
+    story = Story.where(story_id: params[:story_id].to_i).first
+    render :vote, :locals => {story: story}
+  end
+
   get :update do
     get_and_save_feature
     redirect url(:index)
