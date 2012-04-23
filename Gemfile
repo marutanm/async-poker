@@ -22,6 +22,9 @@ gem 'bson_ext', :require => "mongo"
 gem 'haml'
 
 # Test requirements
+gem 'mocha', :group => "test"
+gem 'minitest', "~>2.6.0", :require => "minitest/autorun", :group => "test"
+gem 'rack-test', :require => "rack/test", :group => "test"
 
 # Padrino Stable Gem
 gem 'padrino', '0.10.5'

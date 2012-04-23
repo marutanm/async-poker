@@ -50,9 +50,13 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     method_source (0.6.7)
       ruby_parser (>= 2.3.1)
     mime-types (1.17.2)
+    minitest (2.6.2)
+    mocha (0.11.1)
+      metaclass (~> 0.0.1)
     mongo (1.5.2)
       bson (= 1.5.2)
     mongoid (2.4.1)
@@ -121,6 +125,8 @@ GEM
       pry (>= 0.8)
     rack-protection (1.2.0)
       rack
+    rack-test (0.6.1)
+      rack (>= 1.0)
     rake (0.9.2.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -152,6 +158,8 @@ DEPENDENCIES
   bcrypt-ruby
   bson_ext
   haml
+  minitest (~> 2.6.0)
+  mocha
   mongoid
   omniauth
   omniauth-github
@@ -159,6 +167,7 @@ DEPENDENCIES
   pivotal-tracker
   pry-padrino
   rack!
+  rack-test
   rake
   sass
   sinatra-flash
