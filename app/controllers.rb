@@ -38,6 +38,7 @@ AsyncPoker.controllers  do
 
   get :story, :with => :story_id do
     story = Story.where(story_id: params[:story_id].to_i).first
+    halt 404 unless story
     render :vote, :locals => {story: story}
   end
 
