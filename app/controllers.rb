@@ -37,7 +37,7 @@ AsyncPoker.controllers  do
   end
 
   get :story, :with => :story_id do
-    story = Story.where(story_id: params[:story_id].to_i).first
+    story = pivotal.stories.find(params[:story_id])
     halt 404 unless story
     render :vote, :locals => {story: story}
   end

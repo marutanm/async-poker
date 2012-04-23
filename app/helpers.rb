@@ -2,9 +2,12 @@
 
 AsyncPoker.helpers do
 
+  def pivotal
+    @pivotal ||= PivotalTracker::Project.find(ENV['PROJECT_ID'])
+  end
+
   def get_and_save_feature
-    project = PivotalTracker::Project.find(ENV['PROJECT_ID'])
-    project.stories.all(:story_type => 'feature').each do |story|
+    pivotal.stories.all(:story_type => 'feature').each do |story|
       Story.find_or_create_by(story_id: story.id) do |s|
         s.name = story.name
         s.description = story.description
