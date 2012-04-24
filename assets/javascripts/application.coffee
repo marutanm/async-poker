@@ -6,3 +6,10 @@ $(document).ready ->
       =>
         $(@).parent().children('.selected').removeClass('selected')
         $(@).addClass('selected')
+
+  $('.story-list tr').click ->
+    console.log $(@).attr('id')
+    $.pjax
+      url: "story/#{$(@).attr('id')}"
+      container: '.container'
+      replace: true

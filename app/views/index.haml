@@ -1,14 +1,14 @@
 %h1= pivotal.name
 
 %h2 Current
-%table.table.table-striped
+%table.table.table-striped.story-list
   %tbody
     - stories.select{|s| s.current_state == 'unstarted'}.each do |story|
       %tr(id="#{story.id}")
         %td= story.name
 
 %h2 Icebox
-%table.table.table-striped
+%table.table.table-striped.story-list
   %tbody
     - stories.select{|s| s.current_state == 'unscheduled'}.each do |story|
       %tr(id="#{story.id}")
