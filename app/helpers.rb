@@ -35,4 +35,8 @@ AsyncPoker.helpers do
     Account.find(account_id).surname[0..3]
   end
 
+  def fibonacci
+    [0, 1, 2, 3, 5, 8]
+  end
+
 end
