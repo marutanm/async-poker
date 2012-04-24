@@ -21,19 +21,7 @@ AsyncPoker.controllers  do
   end
 
   get :index do
-    @to_vote = Story.to_vote
-    @voted = Story.voted
-    @estimated = Story.estimated
     haml :index
-  end
-
-  post :index do
-    story = Story.find(params[:story_id])
-    v = story.votes.find_or_create_by(account_id: current_account.id.to_s)
-    v.value = params[:value]
-    v.save
-    check_voted(story.id)
-    200
   end
 
   get :story, :with => :story_id do

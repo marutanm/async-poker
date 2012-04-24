@@ -1,33 +1,7 @@
-%h1
-  Not Yet
-#to_vote
-  - @to_vote.each do |s|
-    .story.row{ :id => s.id }
-      .span9
-        .title= s.name
-        .description= s.description
-      - fibonacci.each do |v|
-        .card.span1{:class => s.selected?(current_account, v) && 'selected' }
-          .value= v
-
-%h1
-  Voted
-- @voted.each do |s|
-  .story.row
-    .span10
-      .title= s.name
-      .description= s.description
-    - s.votes.each do |v|
-      .card.span1
-        .value= v.value
-        %span.label.name= short_name(v.account_id)
-
-%h1
-  Estimated
-- @estimated.each do |s|
-  .story.row
-    .span10
-      .title= s.name
-      .description= s.description
-    .card.span1
-      .value= s.estimate
+%h1= pivotal.name
+%table.table-striped
+  %tbody
+    %tr
+      %td hoge
+    %tr
+      %td hoge
