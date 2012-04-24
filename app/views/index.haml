@@ -1,7 +1,6 @@
 %h1= pivotal.name
 %table.table-striped
   %tbody
-    %tr
-      %td hoge
-    %tr
-      %td hoge
+    - stories.each do |story|
+      %tr(id="#{story.id}")
+        %td= story.name

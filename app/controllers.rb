@@ -21,7 +21,8 @@ AsyncPoker.controllers  do
   end
 
   get :index do
-    haml :index
+    stories = pivotal.stories.all(:story_type => 'feature', :current_state => ['unscheduled', 'unstarted'])
+    render :index, :locals => {stories: stories}
   end
 
   get :story, :with => :story_id do
