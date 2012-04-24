@@ -1,5 +1,12 @@
+- fibonacci = [0, 1, 2, 3, 5, 8]
+
 .page-header
   %h1= story.name
   %small requested by #{story.requested_by}
 .hero-unit
   %h2= story.description
+.story.row
+  %h3 Choose your card
+  - fibonacci.each do |v|
+    .card.span1
+      .value= v
