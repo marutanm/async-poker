@@ -10,6 +10,5 @@ $(document).ready ->
   $('.story-list tr').click ->
     console.log $(@).attr('id')
     $.pjax
-      url: "story/#{$(@).attr('id')}"
+      url: "/story/#{$(@).attr('id')}"
       container: '.container'
-      replace: true
