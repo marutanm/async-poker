@@ -10,5 +10,6 @@ $(document).ready ->
   $('.story-list tr').click ->
     console.log $(@).attr('id')
     $.pjax
+      container: '[data-pjax-container]'
       url: "/story/#{$(@).attr('id')}"
-      container: '.container'
+      timeout: 2000

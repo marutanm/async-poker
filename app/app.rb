@@ -16,6 +16,8 @@ class AsyncPoker < Padrino::Application
     provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
   end
 
+  use Rack::Pjax
+
   register Padrino::Admin::AccessControl
 
   set :login_page, "/auth/github"
