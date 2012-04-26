@@ -5,7 +5,10 @@
   %tbody
     - stories.select{|s| s.current_state == 'unstarted'}.each do |story|
       %tr(id="#{story.id}")
-        %td= story.name
+        %td
+          -if story.estimate > 0
+            %span= story.estimate
+          = story.name
         %td= story.requested_by
         %td= story.owned_by ? '=>' : nil
         %td= story.owned_by

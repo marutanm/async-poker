@@ -4,6 +4,13 @@
   -moz-border-radius: $rad;
 }
 
+table {
+  span {
+    border: groove;
+    @include border-radius(2px);
+  }
+}
+
 .story {
   .title {
     font-weight: bold;
